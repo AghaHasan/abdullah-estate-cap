@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>add-property</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>PROPERTY TYPE AND LOCATION</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item>
+        <h3><b>Purpose: </b></h3>
+        <ion-segment mode="ios">
+          <ion-segment-button *ngFor="let item of purpose" [value]="item">
+            <ion-label>{{ item }}</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+      </ion-item>
+      <ion-item>
+        <h3><b>Property Type: </b></h3>
+        <ion-segment mode="ios">
+          <ion-segment-button value="Homes">
+            <ion-label>Homes</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="Plots">
+            <ion-label>Plots</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="Commercial">
+            <ion-label>Commercial</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+      </ion-item>
+      <ion-item>
+        <ion-select placeholder="Select Property Type">
+          <ion-select-option value="Homes">Homes</ion-select-option>
+          <ion-select-option value="Plots">Plots</ion-select-option>
+          <ion-select-option value="Commercial">Commercial</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title> Abdullah Estate </ion-title>
+    <ion-button slot="end" color="success" fill="outline" size="small">+ Add Property</ion-button>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-text>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h4>{{ listingDetail?.description }}</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <p>{{ listingDetail?.location }}</p>
+        </div>
+      </div>
+    </div>
+  </ion-text>
+
+  <ion-slides [options]="slideOpts">
+    <ion-slide *ngFor="let item of gallery">
+      <img [src]="item">
+    </ion-slide>
+  </ion-slides>
+
+  <ion-list>
+    <ion-list-header> Details </ion-list-header>
+    <ion-item lines="none">
+      <ion-label slot="start">
+        Type: {{ listingDetail?.type }}
+      </ion-label>
+      <ion-label slot="end">
+        Area: {{ listingDetail?.landArea }}
+      </ion-label>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label slot="start">
+        Price: {{ listingDetail?.price }}
+      </ion-label>
+      <ion-label slot="end">
+        Purpose: {{ listingDetail?.purpose }}
+      </ion-label>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label slot="start">
+        Bath(s): {{ listingDetail?.bath }}
+      </ion-label>
+      <ion-label slot="end">
+        Bedroom(s): {{ listingDetail?.beds }}
+      </ion-label>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label slot="start">
+        Added: {{ listingDetail?.createdOn }}
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

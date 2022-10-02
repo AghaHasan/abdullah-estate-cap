@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> Abdullah Estate </ion-title>
+    <ion-button slot="end" color="success" fill="outline" size="small" [routerLink]="['/add-property']">+ Add Property</ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+<ion-list>
+  <ion-card *ngFor="let item of listings" [routerLink]="['/listing-detail', item.id]" >
+    <img [src]="item.mainImagePath" />
+    <ion-card-header>
+      <ion-card-title>{{item.price}}</ion-card-title>
+      <ion-card-subtitle>{{item.location}}</ion-card-subtitle>
+      <ion-card-subtitle>Type: {{ item.type }}</ion-card-subtitle>
+      <ion-card-subtitle>Purpose: {{ item.purpose }}</ion-card-subtitle>
+
+      <ion-item lines="none" class="features">
+        <div>
+          <i class="fa fa-bed" aria-hidden="true"></i>
+          <p class="icon-text">{{item.beds}}</p>
+        </div>
+        <div class="ml-20">
+          <i class="fa fa-bath" aria-hidden="true"></i>
+          <p class="icon-text">{{item.bath}}</p>
+        </div>
+        <div class="ml-20">
+          <i class="fa fa-arrows" aria-hidden="true"></i>
+          <p class="icon-text">{{item.landArea}}</p>
+        </div>
+      </ion-item>
+    </ion-card-header>
+    <ion-card-content class="content-start">
+      {{item.description}}
+
+      <p class="creatOnText">
+        Added: {{item.createdOn}}
+      </p>
+
+      <ion-button class="call-btn" color="success" fill="outline" shape="round" size="small">Call</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-list>
+</ion-content>
